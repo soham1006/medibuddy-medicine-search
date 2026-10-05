@@ -6,15 +6,12 @@ import { searchMedicines } from "../api";
 
 function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const urlQuery = searchParams.get("q") || "";
-
   const [query, setQuery] = useState(urlQuery);
   const [medicines, setMedicines] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [hasSearched, setHasSearched] = useState(Boolean(urlQuery));
-
   const requestRef = useRef(null);
 
   async function runSearch(searchTerm) {
@@ -56,7 +53,8 @@ function SearchPage() {
       setError(
         err.message || "Unable to fetch medicines. Please try again."
       );
-    } finally {
+    }
+    finally {
       if (!controller.signal.aborted) {
         setLoading(false);
       }
@@ -158,5 +156,4 @@ function SearchPage() {
     </main>
   );
 }
-
 export default SearchPage;
