@@ -5,7 +5,6 @@ function formatField(value) {
   if (!Array.isArray(value) || value.length === 0) {
     return "";
   }
-
   return value.join(", ");
 }
 

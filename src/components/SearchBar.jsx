@@ -26,7 +26,7 @@ function SearchBar({ onSearch, loading, initialValue = "" }) {
         type="text"
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder="Search by brand name..."
+        placeholder="Search by brand name"
         autoComplete="off"
       />
 
